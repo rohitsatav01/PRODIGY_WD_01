@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            transition: color 0.3s;
+        }
+
+        #navbar a:hover {
+            color: #ffc107;
+        }
+
+        section {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        #section-1 {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #section-2 {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="navbar">
+    <a href="#section-1">PRODIGY INFOTECH</a>
+    <a href="#section-2">Comillas Negras Task-01</a>
+    <a href="#section-3">Responsive Landing Page</a>
+</div>
+
+<section id="section-1">
+    <h2>Section 1</h2>
+    <p>Content for the first section goes here.</p>
+</section>
+
+<section id="section-2">
+    <h2>Section 2</h2>
+    <p>Content for the second section goes here.</p>
+</section>
+
+<!-- Add more sections as needed -->
+
+<script>
+    window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        var sections = document.querySelectorAll('section');
+
+        sections.forEach(function(section) {
+            if (window.scrollY >= section.offsetTop - navbar.clientHeight && window.scrollY < section.offsetTop + section.clientHeight - navbar.clientHeight) {
+                navbar.style.backgroundColor = section.style.backgroundColor;
+                navbar.style.color = section.style.color;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
